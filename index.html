@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DOWN ON ME – Promo & Press Kit</title>
+<meta name="description" content="DOWN ON ME – Melodischer Hardcore Metal aus der Ortenau. Pressetext, Technical Rider und Pressefoto zum Download.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0a09; --bg2:#14100d; --panel:rgba(20,15,12,.82);
+  --copper:#d0702f; --copper-hi:#e98c45; --rust:#5b2814; --rust2:#3a190d;
+  --text:#ece4d8; --muted:#a99a89; --line:rgba(208,112,47,.55);
+  --serif:'Cinzel', 'Trajan Pro', Georgia, serif;
+  --sans:'IBM Plex Sans', system-ui, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--text); font-family:var(--sans); font-size:16px; line-height:1.65;
+  background-image:
+    radial-gradient(1200px 700px at 8% 18%, rgba(120,48,16,.20), transparent 60%),
+    radial-gradient(900px 600px at 95% 55%, rgba(140,60,20,.14), transparent 60%),
+    radial-gradient(1000px 800px at 30% 95%, rgba(100,40,14,.18), transparent 60%);
+  background-attachment:fixed;
+}
+/* grain */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.10;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+a{color:var(--copper-hi)}
+img{display:block;max-width:100%}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:12px clamp(16px,4vw,48px);transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+nav.solid{background:rgba(10,8,7,.92);backdrop-filter:blur(8px);border-bottom-color:rgba(208,112,47,.35)}
+nav .brand img{height:38px;width:auto}
+nav ul{list-style:none;display:flex;gap:clamp(12px,2.4vw,30px)}
+nav ul a{font-family:var(--serif);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--text);text-decoration:none;opacity:.85}
+nav ul a:hover{color:var(--copper-hi);opacity:1}
+@media(max-width:720px){nav ul li:not(.k){display:none}}
+
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero picture,.hero picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.hero::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(12,10,9,.55) 0%,rgba(12,10,9,0) 22%,rgba(12,10,9,0) 45%,rgba(12,10,9,.85) 78%,var(--bg) 100%)}
+.hero-inner{position:relative;z-index:2;width:100%;text-align:center;padding:0 20px clamp(40px,8vh,90px)}
+.hero-logo{width:min(460px,78vw);margin:0 auto;filter:drop-shadow(0 6px 24px rgba(0,0,0,.85))}
+.hero h1{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.tag{font-family:var(--serif);letter-spacing:.42em;font-size:clamp(.72rem,1.6vw,.9rem);color:var(--muted);margin-top:14px;text-transform:uppercase}
+.hero .cta{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:600;font-size:.82rem;letter-spacing:.2em;text-transform:uppercase;
+  padding:14px 26px;border:1px solid var(--copper);color:var(--text);text-decoration:none;background:rgba(12,10,9,.55);cursor:pointer;transition:all .2s}
+.btn:hover{background:var(--copper);color:#140b06}
+.btn.solid{background:var(--copper);color:#140b06}
+.btn.solid:hover{background:var(--copper-hi)}
+
+/* ornament divider, like the rider */
+.orn{display:flex;align-items:center;gap:14px;justify-content:center;margin:0 auto;width:min(620px,86%)}
+.orn::before,.orn::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+.orn i{width:7px;height:7px;transform:rotate(45deg);border:1px solid var(--copper);background:var(--rust)}
+
+/* sections – framed like a rider page */
+section.page{position:relative;max-width:1120px;margin:70px auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,64px);
+  border:1px solid var(--line);background:var(--panel)}
+section.page::before{content:"";position:absolute;inset:7px;border:1px solid rgba(208,112,47,.18);pointer-events:none}
+.sec-head{text-align:center;margin-bottom:38px}
+.sec-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,4.2vw,2.7rem);letter-spacing:.18em;text-transform:uppercase;line-height:1.15}
+.sec-head p{font-family:var(--serif);color:var(--copper);font-size:.82rem;letter-spacing:.14em;margin-top:8px}
+.sec-head .orn{margin-top:18px}
+
+h3{font-family:var(--serif);font-size:.95rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--copper-hi);
+  padding-bottom:6px;border-bottom:1px solid var(--line);margin-bottom:14px}
+
+/* band */
+.band-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(28px,4vw,56px);align-items:start}
+@media(max-width:860px){.band-grid{grid-template-columns:1fr}}
+.press p{font-size:1.06rem;color:#e2d8ca}
+.press .actions{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+.press .btn{padding:10px 18px;font-size:.72rem}
+.lineup{list-style:none}
+.lineup li{display:flex;justify-content:space-between;gap:12px;padding:11px 14px;border-bottom:1px solid rgba(208,112,47,.2)}
+.lineup li:nth-child(odd){background:rgba(91,40,20,.18)}
+.lineup b{font-family:var(--serif);letter-spacing:.12em;font-weight:600}
+.lineup span{color:var(--muted);font-size:.9rem;text-align:right}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+.facts div{border:1px solid rgba(208,112,47,.35);padding:12px 8px;text-align:center}
+.facts strong{display:block;font-family:var(--serif);font-size:1.25rem;color:var(--copper-hi)}
+.facts small{color:var(--muted);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+
+/* tech */
+.tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,48px)}
+@media(max-width:860px){.tech-grid{grid-template-columns:1fr}}
+.bul{list-style:none;margin-bottom:26px}
+.bul li{position:relative;padding:4px 0 4px 20px;color:#ddd3c5;font-size:.96rem}
+.bul li::before{content:"";position:absolute;left:3px;top:13px;width:6px;height:6px;transform:rotate(45deg);background:var(--copper)}
+.stageplot{align-self:start;border:1px solid var(--line);padding:6px;background:#0a0807}
+.stageplot figcaption{font-size:.78rem;color:var(--muted);text-align:center;padding-top:8px;letter-spacing:.06em}
+.note{margin-top:26px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(91,40,20,.55),rgba(58,25,13,.55));padding:16px 20px;font-size:.95rem}
+.note b{color:var(--copper-hi);font-family:var(--serif);letter-spacing:.1em}
+
+/* downloads */
+.dl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.dl{display:flex;flex-direction:column;border:1px solid var(--line);background:rgba(10,8,7,.7);text-decoration:none;color:var(--text);transition:transform .2s,border-color .2s,background .2s;position:relative}
+.dl:hover{transform:translateY(-3px);border-color:var(--copper-hi);background:rgba(91,40,20,.25)}
+.dl .hd{background:var(--rust);padding:10px 16px;font-family:var(--serif);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:#f1d7c2;display:flex;justify-content:space-between}
+.dl .bd{padding:20px 16px 18px;flex:1;display:flex;flex-direction:column}
+.dl .t{font-family:var(--serif);font-size:1.12rem;letter-spacing:.06em;line-height:1.3}
+.dl .d{color:var(--muted);font-size:.86rem;margin:8px 0 16px;flex:1}
+.dl .go{font-family:var(--serif);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--copper-hi);display:flex;align-items:center;gap:8px}
+.dl .go svg{width:16px;height:16px}
+.dl.busy{opacity:.6;pointer-events:none}
+.dl-hint{text-align:center;color:var(--muted);font-size:.82rem;margin-top:22px}
+
+/* contact */
+.contact{text-align:center}
+.contact .who{font-family:var(--serif);font-size:1.5rem;letter-spacing:.14em}
+.contact .role{color:var(--muted);letter-spacing:.1em;font-size:.9rem;margin-bottom:22px}
+.contact .lines{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.contact .line{border:1px solid var(--line);padding:16px 24px;min-width:260px}
+.contact .line small{display:block;font-family:var(--serif);color:var(--copper);letter-spacing:.2em;font-size:.7rem;text-transform:uppercase}
+.contact .line a,.contact .line span.v{font-size:1.15rem;color:var(--text);text-decoration:none;font-weight:500}
+.contact .line button{margin-top:8px;background:none;border:0;color:var(--muted);font:inherit;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.contact .line button:hover{color:var(--copper-hi)}
+
+footer{text-align:center;padding:30px 20px 60px;color:var(--muted);font-family:var(--serif);font-size:.72rem;letter-spacing:.32em;text-transform:uppercase}
+footer .orn{margin-bottom:18px}
+
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,30px);opacity:0;background:#1a120d;border:1px solid var(--copper);
+  padding:12px 20px;font-size:.9rem;z-index:200;transition:all .3s;pointer-events:none;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:760px){
+  .hero{min-height:0;display:block;background:var(--bg)}
+  .hero picture{position:relative;display:block;aspect-ratio:4/3}
+  .hero picture img{position:absolute}
+  .hero::after{display:none}
+  .hero picture::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,10,9,.55) 0%,rgba(12,10,9,0) 22%,rgba(12,10,9,0) 55%,var(--bg) 100%)}
+  section.page{margin:40px 12px}
+  .hero-inner{margin-top:-14vw;padding-bottom:36px}
+}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="brand" href="#top" aria-label="DOWN ON ME"><img src="img/logo-900.webp" alt="DOWN ON ME"></a>
+  <ul>
+    <li><a href="#band">Band</a></li>
+    <li><a href="#technik">Technik</a></li>
+    <li class="k"><a href="#downloads">Downloads</a></li>
+    <li class="k"><a href="#kontakt">Kontakt</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="top">
+  <picture>
+    <source media="(max-width:900px)" srcset="img/band-1200.jpg">
+    <img src="img/band.jpg" alt="DOWN ON ME – Bandfoto">
+  </picture>
+  <div class="hero-inner">
+    <h1>DOWN ON ME</h1>
+    <img class="hero-logo" src="img/logo.webp" alt="DOWN ON ME Logo">
+    <div class="tag">Melodischer Hardcore Metal</div>
+    <div class="tag" style="margin-top:6px;letter-spacing:.3em;font-size:.72rem">aus der Ortenau</div>
+    <div class="cta">
+      <a class="btn solid" href="#downloads">Press Kit &amp; Rider</a>
+      <a class="btn" href="#kontakt">Booking-Kontakt</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="page reveal" id="band">
+  <div class="sec-head">
+    <h2>Die Band</h2>
+    <p>Fünf Ortenauer · melodischer Hardcore Metal</p>
+    <div class="orn"><i></i></div>
+  </div>
+  <div class="band-grid">
+    <div class="press">
+      <h3>Pressetext</h3>
+      <p id="presstext">Wir, DOWN ON ME, sind fünf Ortenauer, die harten und gleichermaßen melodischen Metal anbieten. Mehrere Elemente aus den „Core“-Genres ergänzen unseren typischen Sound. In unseren Songs finden sich verschiedene Einflüsse aus den härteren Musikrichtungen der letzten 30 Jahre: Metal, Hardcore, Punk, uvm. Mit druckvollen Riffs, treibenden Grooves, eingängigen Melodien und ehrlichen Vocals verbinden wir rohe Energie mit modernen Sounds. Unsere Musik steht für Leidenschaft, Authentizität und kompromisslose Live-Power, bei der Kopfschüttler und Moshpitjunkies gleichermaßen auf ihre Kosten kommen.</p>
+      <div class="actions">
+        <button class="btn" id="copyPress" type="button">Text kopieren</button>
+        <a class="btn dl-link" href="files/DOWN_ON_ME_Pressetext.docx" download data-name="DOWN_ON_ME_Pressetext.docx">Pressetext (Word)</a>
+      </div>
+    </div>
+    <div>
+      <h3>Line-up</h3>
+      <ul class="lineup">
+        <li><b>MATT</b><span>Gitarre / Gesang</span></li>
+        <li><b>PATRICK</b><span>Vocals / Shouts</span></li>
+        <li><b>JD</b><span>Gitarre</span></li>
+        <li><b>BJÖRN</b><span>Bass</span></li>
+        <li><b>JANNIK</b><span>Drums</span></li>
+      </ul>
+      <div class="facts">
+        <div><strong>5</strong><small>Musiker</small></div>
+        <div><strong>16</strong><small>Kanäle</small></div>
+        <div><strong>IEM</strong><small>eigenes X32</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page reveal" id="technik">
+  <div class="sec-head">
+    <h2>Technik auf einen Blick</h2>
+    <p>Signalverteilung · Monitoring · Playback</p>
+    <div class="orn"><i></i></div>
+  </div>
+  <div class="tech-grid">
+    <div>
+      <h3>Allgemeines</h3>
+      <ul class="bul">
+        <li>5 Musiker – melodischer Hardcore Metal, kein eigener FOH-Techniker</li>
+        <li>Veranstalter stellt PA und einen erfahrenen FOH-Techniker</li>
+        <li>Eigenes Behringer X32 Rack für das komplette In-Ear-Monitoring – keine Wedges nötig</li>
+      </ul>
+      <h3>Signalverteilung</h3>
+      <ul class="bul">
+        <li>Bevorzugt: Haussplitter mit 16 getrennten, unbearbeiteten XLR-Signalen an unser X32</li>
+        <li>Alternativ: eigener Splitter + Multicore, dann Stereo-Drummix vom FOH</li>
+        <li>B-Beat-Einspieler mono (Kanal 9), Click (Kanal 10) nur In-Ear – nie auf die PA</li>
+      </ul>
+      <h3>Backline &amp; Bühne</h3>
+      <ul class="bul">
+        <li>Drums: Bassdrum, 2 Racktoms, Standtom, Hardware &amp; Mikrofone vom Veranstalter</li>
+        <li>Rutschfester Drum-Teppich erforderlich</li>
+        <li>Eigenes Backdrop 3,00 × 1,80 m – bitte Befestigungsmöglichkeit hinter dem Drumkit</li>
+        <li>Keine festen Mindestmaße für die Bühne</li>
+      </ul>
+    </div>
+    <figure class="stageplot">
+      <img src="img/stageplot.jpg" alt="Stageplot DOWN ON ME – Ansicht vom Publikum" loading="lazy">
+      <figcaption>Stageplot – Ansicht vom Publikum. Details, Input-Liste &amp; Checklisten im Technical Rider.</figcaption>
+    </figure>
+  </div>
+  <div class="note"><b>Bitte frühzeitig kommunizieren:</b> Sollte etwas nicht gestellt werden können, finden wir gemeinsam eine Lösung.</div>
+</section>
+
+<section class="page reveal" id="downloads">
+  <div class="sec-head">
+    <h2>Downloads</h2>
+    <p>Technical Rider · Pressetext · Pressefoto</p>
+    <div class="orn"><i></i></div>
+  </div>
+  <div class="dl-grid">
+    <a class="dl dl-link" href="files/DOWN_ON_ME_Technical_Rider_2026_DE.pdf" download data-name="DOWN_ON_ME_Technical_Rider_2026_DE.pdf" target="_blank" rel="noopener">
+      <div class="hd"><span>Technical Rider</span><span>DE · PDF</span></div>
+      <div class="bd"><div class="t">Technical Rider 2026<br>Deutsch</div>
+        <div class="d">Stageplot, Input-Liste, Drum-Rider, Checklisten, Backdrop – inkl. Druckversion. 6,8 MB</div>
+        <div class="go">Herunterladen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></div></div>
+    </a>
+    <a class="dl dl-link" href="files/DOWN_ON_ME_Technical_Rider_2026_EN.pdf" download data-name="DOWN_ON_ME_Technical_Rider_2026_EN.pdf" target="_blank" rel="noopener">
+      <div class="hd"><span>Technical Rider</span><span>EN · PDF</span></div>
+      <div class="bd"><div class="t">Technical Rider 2026<br>English</div>
+        <div class="d">Stage plot, input list, drum rider, checklists, backdrop – incl. print version. 16 MB</div>
+        <div class="go">Download <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></div></div>
+    </a>
+    <a class="dl dl-link" href="files/DOWN_ON_ME_Pressetext.pdf" download data-name="DOWN_ON_ME_Pressetext.pdf" target="_blank" rel="noopener">
+      <div class="hd"><span>Presse</span><span>PDF</span></div>
+      <div class="bd"><div class="t">Pressetext<br>Gestaltet</div>
+        <div class="d">Bandbeschreibung im Layout – zum Weiterleiten oder Ausdrucken. 0,4 MB</div>
+        <div class="go">Herunterladen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></div></div>
+    </a>
+    <a class="dl dl-link" href="files/DOWN_ON_ME_Pressetext.docx" download download data-name="DOWN_ON_ME_Pressetext.docx">
+      <div class="hd"><span>Presse</span><span>Word · Clean</span></div>
+      <div class="bd"><div class="t">Pressetext<br>Clean</div>
+        <div class="d">Reiner Text ohne Layout – ideal zum Kopieren für Programmhefte, Websites &amp; Social Media.</div>
+        <div class="go">Herunterladen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></div></div>
+    </a>
+    <a class="dl dl-link" href="files/DOWN_ON_ME_Pressefoto.jpg" download data-name="DOWN_ON_ME_Pressefoto.jpg" target="_blank" rel="noopener">
+      <div class="hd"><span>Presse</span><span>JPG</span></div>
+      <div class="bd"><div class="t">Pressefoto<br>Hochauflösend</div>
+        <div class="d">Bandfoto in voller Auflösung (7186 × 5389 px) für Plakate &amp; Ankündigungen. 2,7 MB</div>
+        <div class="go">Herunterladen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></div></div>
+    </a>
+  </div>
+</section>
+
+<section class="page reveal contact" id="kontakt">
+  <div class="sec-head">
+    <h2>Kontakt</h2>
+    <p>Booking · Technik · Rückfragen</p>
+    <div class="orn"><i></i></div>
+  </div>
+  <div class="who">MATT</div>
+  <div class="role">Gitarre / Gesang / Technischer Ansprechpartner</div>
+  <div class="lines">
+    <div class="line"><small>Telefon</small><a href="tel:+4917654134149">+49 176 54134149</a><br><button type="button" data-copy="+49 176 54134149">Kopieren</button></div>
+    <div class="line"><small>E-Mail</small><a href="mailto:downonme@gmx.net">downonme@gmx.net</a><br><button type="button" data-copy="downonme@gmx.net">Kopieren</button></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="orn"><i></i></div>
+  DOWN ON ME &nbsp;·&nbsp; Melodischer Hardcore Metal &nbsp;·&nbsp; 2026
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('solid',window.scrollY>60)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var io='IntersectionObserver' in window ? new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+  },{threshold:.08}) : null;
+  document.querySelectorAll('.reveal').forEach(function(el){io?io.observe(el):el.classList.add('in')});
+
+  var toastEl=document.getElementById('toast'),tt;
+  function toast(m){toastEl.textContent=m;toastEl.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toastEl.classList.remove('show')},2600)}
+
+  function copy(text,label){
+    try{
+      navigator.clipboard.writeText(text).then(function(){toast(label+' kopiert')},function(){toast('Kopieren nicht möglich – bitte markieren')});
+    }catch(e){toast('Kopieren nicht möglich – bitte markieren')}
+  }
+  document.getElementById('copyPress').addEventListener('click',function(){
+    copy(document.getElementById('presstext').textContent.trim(),'Pressetext');
+  });
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){copy(b.getAttribute('data-copy'),b.getAttribute('data-copy'))});
+  });
+
+  // Downloads: use the host's download capability when available, otherwise open the file directly.
+  var dl=null;
+  try{
+    if(window.claude && typeof window.claude.use==='function'){
+      window.claude.use('downloads').then(function(ns){dl=ns||null},function(){dl=null});
+    }
+  }catch(e){}
+
+  var DOCX_B64='';
+  function embeddedBlob(){
+    var bin=atob(DOCX_B64),u=new Uint8Array(bin.length);
+    for(var i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);
+    return new Blob([u],{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'});
+  }
+  document.querySelectorAll('.dl-link').forEach(function(a){
+    var emb=a.hasAttribute('data-embedded');
+    a.addEventListener('click',function(ev){
+      if(!dl){
+        if(emb){ev.preventDefault();toast('Download hier nicht verfügbar – bitte \u201eText kopieren\u201c nutzen');}
+        return; // fallback: normal link opens the file
+      }
+      ev.preventDefault();
+      var name=a.getAttribute('data-name');
+      a.classList.add('busy');
+      (emb ? Promise.resolve(embeddedBlob()) : fetch(a.getAttribute('href')).then(function(r){
+        if(!r.ok) throw new Error('fetch');
+        return r.blob();
+      })).then(function(blob){
+        return dl.save({filename:name,data:blob});
+      }).then(function(){
+        toast(name+' wird gespeichert');
+      }).catch(function(err){
+        var c=err&&err.code;
+        if(c==='declined') return;
+        if(c==='rate_limited'){toast('Bitte kurz warten und erneut versuchen');return}
+        if(emb){toast('Download nicht möglich – bitte \u201eText kopieren\u201c nutzen');return}
+        window.location.href=a.getAttribute('href');
+      }).then(function(){a.classList.remove('busy')});
+    });
+  });
+})();
+</script>
+</body>
+</html>
