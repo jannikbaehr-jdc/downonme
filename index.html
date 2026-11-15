@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DOWN ON ME – Melodic Hardcore Metal</title>
-<meta name="description" content="DOWN ON ME – Melodic Hardcore Metal aus der Ortenau. Musik, Pressetext, Pressefoto, Logos und Technical Rider zum Download.">
+<meta name="description" content="DOWN ON ME – Melodic Hardcore Metal aus der Ortenau. Musik, Fotos, Pressetext, Logos und Technical Rider zum Download.">
 <meta property="og:title" content="DOWN ON ME – Melodic Hardcore Metal">
 <meta property="og:description" content="Promo & Press Kit: Musik, Pressetext, Fotos, Logos und Technical Rider.">
 <meta property="og:image" content="img/band-1200.jpg">
@@ -189,9 +189,11 @@ footer .orn{margin-bottom:18px}
 .pl-k{font-family:var(--serif);color:var(--copper);letter-spacing:.22em;font-size:.68rem;text-transform:uppercase}
 .pl-title{font-family:var(--serif);font-size:clamp(1.4rem,3vw,1.9rem);letter-spacing:.08em;line-height:1.15}
 .pl-artist{color:var(--muted);font-size:.82rem;letter-spacing:.2em}
-.pl-bars{display:flex;align-items:flex-end;gap:3px;height:46px;margin:22px 0 10px}
-.pl-bars i{flex:1;background:linear-gradient(180deg,var(--copper-hi),var(--rust));opacity:.35;height:20%;transition:height .12s ease,opacity .3s}
-.dom-player.playing .pl-bars i{opacity:.85}
+.pl-wave{position:relative;height:84px;margin:22px 0 10px;cursor:pointer;touch-action:none;user-select:none}
+.pl-wave canvas{display:block;width:100%;height:100%}
+.pl-hover{position:absolute;top:0;bottom:0;width:1px;background:var(--text);opacity:0;pointer-events:none;transition:opacity .15s}
+.pl-hover span{position:absolute;top:-24px;left:50%;transform:translateX(-50%);background:#1a120d;border:1px solid var(--copper);font-size:.72rem;padding:1px 6px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.pl-wave:hover .pl-hover,.pl-wave.drag .pl-hover{opacity:.8}
 .pl-seek,.pl-vol input{-webkit-appearance:none;appearance:none;width:100%;height:4px;background:linear-gradient(90deg,var(--copper) var(--p,0%),rgba(255,255,255,.14) var(--p,0%));outline:none;cursor:pointer;border-radius:2px}
 .pl-seek::-webkit-slider-thumb,.pl-vol input::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:var(--copper-hi);border:2px solid #160b05}
 .pl-seek::-moz-range-thumb,.pl-vol input::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:var(--copper-hi);border:2px solid #160b05}
@@ -207,6 +209,36 @@ footer .orn{margin-bottom:18px}
 .pl-list li.on .tt{color:var(--copper-hi)}
 .spot{margin-top:10px}
 .spot iframe{height:152px}
+
+/* gallery */
+.gallery{display:flex;gap:18px}
+.g-col{flex:1;display:flex;flex-direction:column;gap:18px}
+@media(max-width:640px){.gallery{flex-direction:column}}
+.g-item{position:relative;border:1px solid var(--line);background:#0a0807;overflow:hidden}
+.g-open{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.g-open img{width:100%;height:auto;transition:transform .6s ease,filter .4s;filter:saturate(.92)}
+.g-item:hover .g-open img{transform:scale(1.035);filter:saturate(1.05)}
+.g-item figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
+  padding:36px 14px 12px;background:linear-gradient(180deg,transparent,rgba(8,6,5,.92));pointer-events:none}
+.g-item figcaption b{display:block;font-family:var(--serif);letter-spacing:.14em;font-size:.95rem;text-transform:uppercase}
+.g-item figcaption small{color:var(--muted);font-size:.74rem}
+.g-dl{pointer-events:auto;flex:none;width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--copper);background:rgba(12,10,9,.7);color:var(--copper-hi);transition:all .2s}
+.g-dl:hover{background:var(--copper);color:#140b06}
+.g-dl svg{width:18px;height:18px}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:300;background:rgba(6,5,4,.95);display:flex;align-items:center;justify-content:center;padding:56px 64px}
+.lb[hidden]{display:none}
+.lb-fig{max-width:100%;max-height:100%;display:flex;flex-direction:column;align-items:center}
+.lb-fig img{max-width:100%;max-height:calc(100vh - 170px);object-fit:contain;border:1px solid var(--line)}
+.lb-fig figcaption{display:flex;align-items:center;gap:20px;margin-top:16px;flex-wrap:wrap;justify-content:center}
+.lb-fig figcaption span{font-family:var(--serif);letter-spacing:.12em;color:var(--text)}
+.lb-fig .btn{padding:10px 18px;font-size:.72rem}
+.lb-x,.lb-nav{position:absolute;background:rgba(12,10,9,.6);border:1px solid var(--line);color:var(--text);cursor:pointer;display:grid;place-items:center;line-height:1}
+.lb-x{top:14px;right:14px;width:44px;height:44px;font-size:28px}
+.lb-nav{top:50%;transform:translateY(-50%);width:48px;height:64px;font-size:40px}
+.lb-prev{left:10px}.lb-next{right:10px}
+.lb-x:hover,.lb-nav:hover{border-color:var(--copper-hi);color:var(--copper-hi)}
+@media(max-width:640px){.lb{padding:56px 8px 20px}.lb-nav{top:auto;bottom:18px;transform:none;height:48px}}
 </style>
 </head>
 <body>
@@ -216,6 +248,7 @@ footer .orn{margin-bottom:18px}
   <ul>
     <li><a href="#band">Band</a></li>
     <li class="k"><a href="#musik">Musik</a></li>
+    <li><a href="#fotos">Fotos</a></li>
     <li class="k"><a href="#presse">Press Kit</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
     <li><a href="#technik">Technik</a></li>
@@ -288,7 +321,10 @@ footer .orn{margin-bottom:18px}
           <div class="pl-artist">DOWN ON ME</div>
         </div>
       </div>
-      <div class="pl-bars" id="plBars" aria-hidden="true"></div>
+      <div class="pl-wave" id="plWave" title="Klicken oder ziehen, um zu springen">
+        <canvas id="plCanvas"></canvas>
+        <div class="pl-hover" id="plHover"><span id="plHoverT">0:00</span></div>
+      </div>
       <input class="pl-seek" id="plSeek" type="range" min="0" max="1000" value="0" aria-label="Position">
       <div class="pl-time"><span id="plCur">0:00</span><span id="plDur">0:00</span></div>
       <div class="pl-vol"><span>Lautstärke</span><input id="plVol" type="range" min="0" max="1" step="0.01" value="0.9" aria-label="Lautstärke"></div>
@@ -305,10 +341,45 @@ footer .orn{margin-bottom:18px}
   </div>
 </section>
 
+<section class="page reveal" id="fotos">
+  <div class="sec-head">
+    <h2>Fotos</h2>
+    <p>Pressefotos zum Download · frei für Ankündigungen</p>
+    <div class="orn"><i></i></div>
+  </div>
+  <div class="gallery">
+    <div class="g-col">
+      <figure class="g-item" data-i="0">
+        <button class="g-open" type="button" aria-label="Bandfoto groß ansehen"><img src="img/gallery/1_Band_t.jpg" width="7186" height="5389" alt="DOWN ON ME – Bandfoto" loading="lazy"></button>
+        <figcaption><span><b>Bandfoto</b><small>7186 × 5389 px · 2,8 MB</small></span>
+          <a class="g-dl" href="files/fotos/DOWN_ON_ME_Foto_1_Band.jpg" download aria-label="Bandfoto herunterladen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></a></figcaption>
+      </figure>
+      <figure class="g-item" data-i="1">
+        <button class="g-open" type="button" aria-label="Beton groß ansehen"><img src="img/gallery/2_Beton_t.jpg" width="1717" height="2576" alt="DOWN ON ME – Beton" loading="lazy"></button>
+        <figcaption><span><b>Beton</b><small>1717 × 2576 px · 0,4 MB</small></span>
+          <a class="g-dl" href="files/fotos/DOWN_ON_ME_Foto_2_Beton.jpg" download aria-label="Beton herunterladen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></a></figcaption>
+      </figure>
+    </div>
+    <div class="g-col">
+      <figure class="g-item" data-i="2">
+        <button class="g-open" type="button" aria-label="Live groß ansehen"><img src="img/gallery/3_Live_t.jpg" width="2576" height="1934" alt="DOWN ON ME – Live" loading="lazy"></button>
+        <figcaption><span><b>Live</b><small>2576 × 1934 px · 0,2 MB</small></span>
+          <a class="g-dl" href="files/fotos/DOWN_ON_ME_Foto_3_Live.jpg" download aria-label="Live herunterladen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></a></figcaption>
+      </figure>
+      <figure class="g-item" data-i="3">
+        <button class="g-open" type="button" aria-label="Treppe groß ansehen"><img src="img/gallery/4_Treppe_t.jpg" width="1942" height="2576" alt="DOWN ON ME – Treppe" loading="lazy"></button>
+        <figcaption><span><b>Treppe</b><small>1942 × 2576 px · 0,6 MB</small></span>
+          <a class="g-dl" href="files/fotos/DOWN_ON_ME_Foto_4_Treppe.jpg" download aria-label="Treppe herunterladen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></a></figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="center"><a class="btn" href="files/DOWN_ON_ME_Fotos.zip" download>Alle Fotos als ZIP</a></div>
+</section>
+
 <section class="page reveal" id="presse">
   <div class="sec-head">
     <h2>Press Kit</h2>
-    <p>Pressetext · Pressefoto · Logos</p>
+    <p>Pressetext · Fotos · Logos</p>
     <div class="orn"><i></i></div>
   </div>
   <div class="dl-grid">
@@ -324,10 +395,10 @@ footer .orn{margin-bottom:18px}
         <div class="d">Reiner Text ohne Layout – ideal für Programmhefte, Websites &amp; Social Media.</div>
         <div class="go">Herunterladen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></div></div>
     </a>
-    <a class="dl" href="files/DOWN_ON_ME_Pressefoto.jpg" download>
-      <div class="hd"><span>Foto</span><span>JPG</span></div>
-      <div class="bd"><div class="t">Pressefoto<br>Hochauflösend</div>
-        <div class="d">Bandfoto in voller Auflösung (7186 × 5389 px) für Plakate &amp; Ankündigungen. 2,7 MB</div>
+    <a class="dl" href="files/DOWN_ON_ME_Fotos.zip" download>
+      <div class="hd"><span>Fotos</span><span>ZIP</span></div>
+      <div class="bd"><div class="t">Pressefotos<br>Komplett</div>
+        <div class="d">Alle vier Bandfotos in voller Auflösung, gebündelt. 3,7 MB</div>
         <div class="go">Herunterladen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></div></div>
     </a>
   </div>
@@ -412,13 +483,13 @@ footer .orn{margin-bottom:18px}
     <a class="dl" href="files/DOWN_ON_ME_Technical_Rider_2026_DE.pdf" download>
       <div class="hd"><span>Technical Rider</span><span>DE · PDF</span></div>
       <div class="bd"><div class="t">Technical Rider 2026<br>Deutsch</div>
-        <div class="d">Stageplot, Input-Liste, Drum-Rider, Checklisten, Backdrop – inkl. Druckversion. 6,8 MB</div>
+        <div class="d">Stageplot, Input-Liste, Drum-Rider, Checklisten, Backdrop – inkl. Druckversion. 1,6 MB</div>
         <div class="go">Herunterladen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></div></div>
     </a>
     <a class="dl" href="files/DOWN_ON_ME_Technical_Rider_2026_EN.pdf" download>
       <div class="hd"><span>Technical Rider</span><span>EN · PDF</span></div>
       <div class="bd"><div class="t">Technical Rider 2026<br>English</div>
-        <div class="d">Stage plot, input list, drum rider, checklists, backdrop – incl. print version. 16 MB</div>
+        <div class="d">Stage plot, input list, drum rider, checklists, backdrop – incl. print version. 2,6 MB</div>
         <div class="go">Download <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></div></div>
     </a>
   </div>
@@ -429,6 +500,14 @@ footer .orn{margin-bottom:18px}
   <div class="orn"><i></i></div>
   DOWN ON ME &nbsp;·&nbsp; Melodic Hardcore Metal &nbsp;·&nbsp; 2026
 </footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto-Ansicht" hidden>
+  <button class="lb-x" id="lbX" type="button" aria-label="Schließen">&times;</button>
+  <button class="lb-nav lb-prev" id="lbPrev" type="button" aria-label="Vorheriges Foto">&#8249;</button>
+  <figure class="lb-fig"><img id="lbImg" alt="">
+    <figcaption><span id="lbCap"></span><a class="btn solid" id="lbDl" href="#" download>Herunterladen</a></figcaption></figure>
+  <button class="lb-nav lb-next" id="lbNext" type="button" aria-label="Nächstes Foto">&#8250;</button>
+</div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -449,51 +528,103 @@ footer .orn{margin-bottom:18px}
   }
 
   // ---- Player ----
-  // Weitere Songs: einfach eine Zeile ergänzen, z. B. {title:"Songname", src:"audio/Datei.mp3"},
+  // Weitere Songs: Zeile ergänzen, z. B. {title:"Songname", src:"audio/Datei.mp3"},
+  // (peaks ist optional – ohne peaks wird eine neutrale Wellenform gezeigt)
   var TRACKS=[
-    {title:"False Gods", src:"audio/DOWN_ON_ME_False_Gods.mp3"}
+    {title:"False Gods", src:"audio/DOWN_ON_ME_False_Gods.mp3", peaks:[0.054,0.054,0.64,0.089,0.398,0.446,0.054,0.607,0.141,0.351,0.452,0.64,0.554,0.596,0.65,0.65,0.527,0.565,0.613,0.665,0.545,0.604,0.543,0.08,0.259,0.738,0.726,0.77,0.72,0.716,0.732,0.712,0.74,0.708,0.791,0.638,0.755,0.789,0.77,0.749,0.72,0.819,0.646,0.745,0.793,0.683,0.757,0.828,0.819,0.747,0.811,0.617,0.808,0.716,0.824,0.911,0.745,0.776,0.776,0.902,0.785,0.683,0.712,0.879,0.839,0.852,0.51,0.708,0.753,0.751,0.734,0.732,0.74,0.761,0.589,0.776,0.716,0.759,0.772,0.749,0.848,0.791,0.863,0.749,0.669,0.815,0.522,0.472,0.461,0.543,0.466,0.476,0.451,0.487,0.536,0.422,0.602,0.74,0.734,0.761,0.743,0.716,0.703,0.785,0.72,0.766,0.759,0.738,0.71,0.65,0.543,0.543,0.126,0.054,0.054,0.054,0.054,0.054,0.054,0.054,0.054,0.054,0.531,0.712,0.583,0.627,0.596,0.583,0.621,0.632,0.576,0.638,0.594,0.627,0.602,0.579,0.663,0.541,0.671,0.662,0.632,0.685,0.671,0.772,0.918,0.863,0.863,0.925,0.986,0.897,0.789,0.888,0.828,0.813,0.857,0.87,1.0,0.839,0.893,0.895,0.859,0.821,0.957,0.589,0.446,0.471,0.589,0.714,0.673,0.482,0.581,0.606,0.632,0.446,0.125,0.36,0.63,0.665,0.85,0.753,0.85,0.615,0.824,0.743,0.728,0.943,0.785,0.843,0.745,0.785,0.895,0.617,0.8,0.811,0.802,0.922,0.734,0.763,0.701,0.747,0.826,0.846,0.757,0.699,0.708,0.73,0.627,0.815,0.753,0.83,0.83,0.839,0.736,0.832,0.703,0.697,0.734,0.583,0.567,0.819,0.545,0.504,0.74,0.489,0.734,0.596,0.527,0.66,0.524,0.665,0.596,0.446,0.785,0.554,0.648,0.708,0.663,0.176,0.091,0.066]}
   ];
   var pl=document.getElementById('player'),au=document.getElementById('plAudio'),
       playBtn=document.getElementById('plPlay'),seek=document.getElementById('plSeek'),vol=document.getElementById('plVol'),
       cur=document.getElementById('plCur'),dur=document.getElementById('plDur'),titleEl=document.getElementById('plTitle'),
-      list=document.getElementById('plList'),bars=document.getElementById('plBars'),idx=0,raf=0,seeking=false;
-  function fmt(t){if(!isFinite(t))return '0:00';t=Math.floor(t);return Math.floor(t/60)+':'+String(t%60).padStart(2,'0')}
-  var NB=window.innerWidth<600?32:56;for(var i=0;i<NB;i++){bars.appendChild(document.createElement('i'))}
-  var barEls=bars.children;
+      list=document.getElementById('plList'),wave=document.getElementById('plWave'),cv=document.getElementById('plCanvas'),
+      hover=document.getElementById('plHover'),hoverT=document.getElementById('plHoverT'),
+      idx=0,dragging=false,pending=null,knownDur=0;
+  function fmt(t){if(!isFinite(t)||t<0)t=0;t=Math.floor(t);return Math.floor(t/60)+':'+String(t%60).padStart(2,'0')}
+  function D(){return isFinite(au.duration)&&au.duration>0?au.duration:knownDur}
+  function setP(el,v){el.style.setProperty('--p',(v*100)+'%')}
+
+  // --- Wellenform zeichnen ---
+  var prog=0,hoverX=-1;
+  function draw(){
+    var r=window.devicePixelRatio||1,w=cv.clientWidth,h=cv.clientHeight;
+    if(cv.width!==Math.round(w*r)||cv.height!==Math.round(h*r)){cv.width=Math.round(w*r);cv.height=Math.round(h*r)}
+    var c=cv.getContext('2d');c.setTransform(r,0,0,r,0,0);c.clearRect(0,0,w,h);
+    var src=TRACKS[idx].peaks||[],bw=w<500?3:4,gap=w<500?2:2,n=Math.max(1,Math.floor(w/(bw+gap)));
+    for(var i=0;i<n;i++){
+      var v=src.length?src[Math.min(src.length-1,Math.floor(i*src.length/n))]:.35+.25*Math.abs(Math.sin(i*.7));
+      var bh=Math.max(2,v*h*.92),x=i*(bw+gap),y=(h-bh)/2,f=(x+bw/2)/w;
+      if(f<=prog) c.fillStyle='#e98c45';
+      else if(hoverX>=0&&x<=hoverX) c.fillStyle='rgba(233,140,69,.45)';
+      else c.fillStyle='rgba(236,228,216,.22)';
+      c.fillRect(x,y,bw,bh);
+    }
+  }
+  window.addEventListener('resize',draw);
+
+  // --- Springen per Klick / Ziehen ---
+  function frac(ev){var b=wave.getBoundingClientRect();return Math.min(1,Math.max(0,(ev.clientX-b.left)/b.width))}
+  function seekTo(f){
+    var d=D(); prog=f; draw(); seek.value=f*1000; setP(seek,f);
+    if(d){cur.textContent=fmt(f*d)}
+    if(isFinite(au.duration)&&au.duration>0){au.currentTime=f*au.duration}else{pending=f}
+  }
+  function showHover(ev){var f=frac(ev),b=wave.getBoundingClientRect();hover.style.left=(f*b.width)+'px';hoverT.textContent=fmt(f*D());hoverX=f*b.width;draw()}
+  wave.addEventListener('pointerdown',function(ev){dragging=true;wave.classList.add('drag');try{wave.setPointerCapture(ev.pointerId)}catch(e){}showHover(ev);seekTo(frac(ev))});
+  wave.addEventListener('pointermove',function(ev){showHover(ev);if(dragging)seekTo(frac(ev))});
+  function endDrag(){if(!dragging)return;dragging=false;wave.classList.remove('drag');if(au.paused)au.play().catch(function(){})}
+  wave.addEventListener('pointerup',endDrag);wave.addEventListener('pointercancel',endDrag);
+  wave.addEventListener('pointerleave',function(){if(!dragging){hoverX=-1;draw()}});
+
+  // --- Tracks ---
   TRACKS.forEach(function(t,i){
     var li=document.createElement('li');
     li.innerHTML='<span class="n">'+String(i+1).padStart(2,'0')+'</span><span class="tt"></span><span class="d">–</span>';
     li.querySelector('.tt').textContent=t.title;
-    li.addEventListener('click',function(){load(i);au.play()});
+    li.addEventListener('click',function(){if(i!==idx)load(i);au.play().catch(function(){})});
     list.appendChild(li);
     var probe=new Audio();probe.preload='metadata';probe.src=t.src;
-    probe.addEventListener('loadedmetadata',function(){li.querySelector('.d').textContent=fmt(probe.duration)});
+    probe.addEventListener('loadedmetadata',function(){t.dur=probe.duration;li.querySelector('.d').textContent=fmt(probe.duration);if(i===idx){knownDur=probe.duration;dur.textContent=fmt(knownDur)}});
   });
-  function load(i){idx=i;au.src=TRACKS[i].src;titleEl.textContent=TRACKS[i].title;
+  function load(i){idx=i;au.src=TRACKS[i].src;titleEl.textContent=TRACKS[i].title;knownDur=TRACKS[i].dur||0;prog=0;pending=null;
+    seek.value=0;setP(seek,0);cur.textContent='0:00';dur.textContent=fmt(knownDur);draw();
     Array.prototype.forEach.call(list.children,function(li,j){li.classList.toggle('on',j===i)})}
   load(0);
-  function setP(el,v){el.style.setProperty('--p',(v*100)+'%')}
+
   au.volume=+vol.value;setP(vol,au.volume);
   vol.addEventListener('input',function(){au.volume=+vol.value;setP(vol,au.volume)});
-  playBtn.addEventListener('click',function(){au.paused?au.play():au.pause()});
-  au.addEventListener('play',function(){pl.classList.add('playing');playBtn.setAttribute('aria-label','Pause');animate()});
+  playBtn.addEventListener('click',function(){au.paused?au.play().catch(function(){}):au.pause()});
+  au.addEventListener('play',function(){pl.classList.add('playing');playBtn.setAttribute('aria-label','Pause')});
   au.addEventListener('pause',function(){pl.classList.remove('playing');playBtn.setAttribute('aria-label','Abspielen')});
-  au.addEventListener('loadedmetadata',function(){dur.textContent=fmt(au.duration)});
-  au.addEventListener('timeupdate',function(){if(seeking)return;var p=au.duration?au.currentTime/au.duration:0;seek.value=p*1000;setP(seek,p);cur.textContent=fmt(au.currentTime)});
-  au.addEventListener('ended',function(){if(idx<TRACKS.length-1){load(idx+1);au.play()}else{load(0)}});
-  seek.addEventListener('input',function(){seeking=true;setP(seek,seek.value/1000);cur.textContent=fmt(au.duration*seek.value/1000)});
-  seek.addEventListener('change',function(){if(au.duration)au.currentTime=au.duration*seek.value/1000;seeking=false});
-  // Equalizer-Animation (rein optisch)
-  var ph=0;
-  function animate(){cancelAnimationFrame(raf);
-    (function tick(){ if(au.paused){Array.prototype.forEach.call(barEls,function(b){b.style.height='20%'});return}
-      ph+=0.09;
-      for(var i=0;i<barEls.length;i++){var x=i/barEls.length;
-        var h=28+32*Math.abs(Math.sin(ph*1.3+i*0.55))*Math.abs(Math.cos(ph*0.7+x*6))+ 30*Math.random()*0.6;
-        barEls[i].style.height=Math.min(100,h)+'%'}
-      raf=setTimeout(function(){requestAnimationFrame(tick)},70);
-    })();
-  }
+  au.addEventListener('loadedmetadata',function(){knownDur=au.duration;dur.textContent=fmt(au.duration);if(pending!==null){au.currentTime=pending*au.duration;pending=null}});
+  au.addEventListener('timeupdate',function(){if(dragging)return;var d=D(),p=d?au.currentTime/d:0;prog=p;seek.value=p*1000;setP(seek,p);cur.textContent=fmt(au.currentTime);draw()});
+  au.addEventListener('ended',function(){if(idx<TRACKS.length-1){load(idx+1);au.play().catch(function(){})}else{load(0)}});
+  // Schieberegler (auch per Tastatur bedienbar)
+  seek.addEventListener('input',function(){seekTo(seek.value/1000)});
+  // Tastatur: Leertaste = Play/Pause, Pfeile = 5 s springen (wenn der Player fokussiert ist)
+  pl.addEventListener('keydown',function(e){
+    if(e.target===vol)return;
+    if(e.key===' '&&e.target!==playBtn){e.preventDefault();au.paused?au.play():au.pause()}
+    if((e.key==='ArrowRight'||e.key==='ArrowLeft')&&e.target!==seek){e.preventDefault();var d=D();if(d)seekTo(Math.min(1,Math.max(0,(au.currentTime+(e.key==='ArrowRight'?5:-5))/d)))}
+  });
+
+  // ---- Galerie / Lightbox ----
+  var PHOTOS=[{"n": "1_Band", "t": "Bandfoto", "w": 7186, "h": 5389, "sz": "2,8 MB"}, {"n": "2_Beton", "t": "Beton", "w": 1717, "h": 2576, "sz": "0,4 MB"}, {"n": "3_Live", "t": "Live", "w": 2576, "h": 1934, "sz": "0,2 MB"}, {"n": "4_Treppe", "t": "Treppe", "w": 1942, "h": 2576, "sz": "0,6 MB"}];
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap'),lbDl=document.getElementById('lbDl'),gi=0,lastFocus=null;
+  function showPhoto(i){gi=(i+PHOTOS.length)%PHOTOS.length;var p=PHOTOS[gi];
+    lbImg.src='img/gallery/'+p.n+'_l.jpg';lbImg.alt='DOWN ON ME – '+p.t;
+    lbCap.textContent=p.t+' · '+p.w+' × '+p.h+' px';
+    lbDl.href='files/fotos/DOWN_ON_ME_Foto_'+p.n+'.jpg';lbDl.textContent='Herunterladen ('+p.sz+')'}
+  function openLb(i){lastFocus=document.activeElement;showPhoto(i);lb.hidden=false;document.body.style.overflow='hidden';document.getElementById('lbX').focus()}
+  function closeLb(){lb.hidden=true;document.body.style.overflow='';if(lastFocus)lastFocus.focus()}
+  document.querySelectorAll('.g-item').forEach(function(f){f.querySelector('.g-open').addEventListener('click',function(){openLb(+f.getAttribute('data-i'))})});
+  document.getElementById('lbX').addEventListener('click',closeLb);
+  document.getElementById('lbPrev').addEventListener('click',function(){showPhoto(gi-1)});
+  document.getElementById('lbNext').addEventListener('click',function(){showPhoto(gi+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb)closeLb()});
+  document.addEventListener('keydown',function(e){if(lb.hidden)return;
+    if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')showPhoto(gi-1);if(e.key==='ArrowRight')showPhoto(gi+1)});
+  var tx=null;lb.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
+  lb.addEventListener('touchend',function(e){if(tx===null)return;var dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50)showPhoto(gi+(dx<0?1:-1));tx=null});
   document.getElementById('copyPress').addEventListener('click',function(){copy(document.getElementById('presstext').textContent.trim(),'Pressetext')});
   document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){copy(b.getAttribute('data-copy'),b.getAttribute('data-copy'))})});
 })();
