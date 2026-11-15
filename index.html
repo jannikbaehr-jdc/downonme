@@ -174,6 +174,39 @@ footer .orn{margin-bottom:18px}
 .logo-card .cap span{color:var(--copper-hi);font-family:var(--serif);font-size:.7rem;letter-spacing:.16em;white-space:nowrap}
 .sub{margin-top:44px}
 .center{text-align:center;margin-top:22px}
+
+/* own audio player */
+.music-grid{align-items:start}
+.dom-player{border:1px solid var(--line);background:linear-gradient(180deg,rgba(91,40,20,.28),rgba(10,8,7,.85));padding:26px 24px;position:relative}
+.dom-player::before{content:"";position:absolute;inset:6px;border:1px solid rgba(208,112,47,.15);pointer-events:none}
+.pl-top{display:flex;align-items:center;gap:20px}
+.pl-play{flex:none;width:74px;height:74px;border-radius:50%;border:1px solid var(--copper-hi);background:radial-gradient(circle at 35% 30%,#e98c45,#a54d1c 70%);color:#160b05;cursor:pointer;display:grid;place-items:center;box-shadow:0 0 0 6px rgba(208,112,47,.12),0 10px 30px rgba(0,0,0,.6);transition:transform .15s}
+.pl-play:hover{transform:scale(1.05)}
+.pl-play svg{width:32px;height:32px}
+.pl-play .i-pause{display:none}
+.dom-player.playing .pl-play .i-pause{display:block}
+.dom-player.playing .pl-play .i-play{display:none}
+.pl-k{font-family:var(--serif);color:var(--copper);letter-spacing:.22em;font-size:.68rem;text-transform:uppercase}
+.pl-title{font-family:var(--serif);font-size:clamp(1.4rem,3vw,1.9rem);letter-spacing:.08em;line-height:1.15}
+.pl-artist{color:var(--muted);font-size:.82rem;letter-spacing:.2em}
+.pl-bars{display:flex;align-items:flex-end;gap:3px;height:46px;margin:22px 0 10px}
+.pl-bars i{flex:1;background:linear-gradient(180deg,var(--copper-hi),var(--rust));opacity:.35;height:20%;transition:height .12s ease,opacity .3s}
+.dom-player.playing .pl-bars i{opacity:.85}
+.pl-seek,.pl-vol input{-webkit-appearance:none;appearance:none;width:100%;height:4px;background:linear-gradient(90deg,var(--copper) var(--p,0%),rgba(255,255,255,.14) var(--p,0%));outline:none;cursor:pointer;border-radius:2px}
+.pl-seek::-webkit-slider-thumb,.pl-vol input::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:var(--copper-hi);border:2px solid #160b05}
+.pl-seek::-moz-range-thumb,.pl-vol input::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:var(--copper-hi);border:2px solid #160b05}
+.pl-time{display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted);margin-top:6px;font-variant-numeric:tabular-nums}
+.pl-vol{display:flex;align-items:center;gap:12px;margin-top:14px;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-family:var(--serif)}
+.pl-vol input{max-width:160px}
+.pl-list{list-style:none;margin-top:20px;border-top:1px solid rgba(208,112,47,.3)}
+.pl-list li{display:flex;gap:14px;align-items:center;padding:11px 8px;border-bottom:1px solid rgba(208,112,47,.15);cursor:pointer;font-size:.95rem}
+.pl-list li:hover{background:rgba(91,40,20,.25)}
+.pl-list li .n{font-family:var(--serif);color:var(--copper);width:22px}
+.pl-list li .tt{flex:1;font-family:var(--serif);letter-spacing:.06em}
+.pl-list li .d{color:var(--muted);font-size:.8rem;font-variant-numeric:tabular-nums}
+.pl-list li.on .tt{color:var(--copper-hi)}
+.spot{margin-top:10px}
+.spot iframe{height:152px}
 </style>
 </head>
 <body>
@@ -242,14 +275,32 @@ footer .orn{margin-bottom:18px}
     <div class="orn"><i></i></div>
   </div>
   <div class="music-grid">
-    <div class="player">
-      <iframe title="DOWN ON ME – Down on Me (Spotify)" src="https://open.spotify.com/embed/track/60kLOskpT6v0lR1I3k3zEE?utm_source=generator&amp;theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="dom-player" id="player">
+      <!-- Songs: weitere Tracks unten im Script bei TRACKS eintragen -->
+      <div class="pl-top">
+        <button class="pl-play" id="plPlay" type="button" aria-label="Abspielen">
+          <svg class="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          <svg class="i-pause" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg>
+        </button>
+        <div class="pl-meta">
+          <div class="pl-k">Jetzt läuft</div>
+          <div class="pl-title" id="plTitle">–</div>
+          <div class="pl-artist">DOWN ON ME</div>
+        </div>
+      </div>
+      <div class="pl-bars" id="plBars" aria-hidden="true"></div>
+      <input class="pl-seek" id="plSeek" type="range" min="0" max="1000" value="0" aria-label="Position">
+      <div class="pl-time"><span id="plCur">0:00</span><span id="plDur">0:00</span></div>
+      <div class="pl-vol"><span>Lautstärke</span><input id="plVol" type="range" min="0" max="1" step="0.01" value="0.9" aria-label="Lautstärke"></div>
+      <ol class="pl-list" id="plList"></ol>
+      <audio id="plAudio" preload="metadata"></audio>
     </div>
     <div class="release">
-      <div class="k">Aus dem Album</div>
-      <div class="t">False Gods</div>
-      <div class="a">Anspieltipp: „Down on Me“</div>
-      <a class="btn solid" href="https://open.spotify.com/artist/5Cb3vcFo1A3RR3G1tXI3fH" target="_blank" rel="noopener">Auf Spotify folgen</a>
+      <div class="k">Auch auf Spotify</div>
+      <div class="player spot">
+        <iframe title="DOWN ON ME auf Spotify" src="https://open.spotify.com/embed/track/60kLOskpT6v0lR1I3k3zEE?utm_source=generator&amp;theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+      <a class="btn solid" href="https://open.spotify.com/artist/5Cb3vcFo1A3RR3G1tXI3fH" target="_blank" rel="noopener" style="margin-top:16px">Auf Spotify folgen</a>
     </div>
   </div>
 </section>
@@ -395,6 +446,53 @@ footer .orn{margin-bottom:18px}
   function copy(text,label){
     try{navigator.clipboard.writeText(text).then(function(){toast(label+' kopiert')},function(){toast('Kopieren nicht möglich – bitte markieren')})}
     catch(e){toast('Kopieren nicht möglich – bitte markieren')}
+  }
+
+  // ---- Player ----
+  // Weitere Songs: einfach eine Zeile ergänzen, z. B. {title:"Songname", src:"audio/Datei.mp3"},
+  var TRACKS=[
+    {title:"False Gods", src:"audio/DOWN_ON_ME_False_Gods.mp3"}
+  ];
+  var pl=document.getElementById('player'),au=document.getElementById('plAudio'),
+      playBtn=document.getElementById('plPlay'),seek=document.getElementById('plSeek'),vol=document.getElementById('plVol'),
+      cur=document.getElementById('plCur'),dur=document.getElementById('plDur'),titleEl=document.getElementById('plTitle'),
+      list=document.getElementById('plList'),bars=document.getElementById('plBars'),idx=0,raf=0,seeking=false;
+  function fmt(t){if(!isFinite(t))return '0:00';t=Math.floor(t);return Math.floor(t/60)+':'+String(t%60).padStart(2,'0')}
+  var NB=window.innerWidth<600?32:56;for(var i=0;i<NB;i++){bars.appendChild(document.createElement('i'))}
+  var barEls=bars.children;
+  TRACKS.forEach(function(t,i){
+    var li=document.createElement('li');
+    li.innerHTML='<span class="n">'+String(i+1).padStart(2,'0')+'</span><span class="tt"></span><span class="d">–</span>';
+    li.querySelector('.tt').textContent=t.title;
+    li.addEventListener('click',function(){load(i);au.play()});
+    list.appendChild(li);
+    var probe=new Audio();probe.preload='metadata';probe.src=t.src;
+    probe.addEventListener('loadedmetadata',function(){li.querySelector('.d').textContent=fmt(probe.duration)});
+  });
+  function load(i){idx=i;au.src=TRACKS[i].src;titleEl.textContent=TRACKS[i].title;
+    Array.prototype.forEach.call(list.children,function(li,j){li.classList.toggle('on',j===i)})}
+  load(0);
+  function setP(el,v){el.style.setProperty('--p',(v*100)+'%')}
+  au.volume=+vol.value;setP(vol,au.volume);
+  vol.addEventListener('input',function(){au.volume=+vol.value;setP(vol,au.volume)});
+  playBtn.addEventListener('click',function(){au.paused?au.play():au.pause()});
+  au.addEventListener('play',function(){pl.classList.add('playing');playBtn.setAttribute('aria-label','Pause');animate()});
+  au.addEventListener('pause',function(){pl.classList.remove('playing');playBtn.setAttribute('aria-label','Abspielen')});
+  au.addEventListener('loadedmetadata',function(){dur.textContent=fmt(au.duration)});
+  au.addEventListener('timeupdate',function(){if(seeking)return;var p=au.duration?au.currentTime/au.duration:0;seek.value=p*1000;setP(seek,p);cur.textContent=fmt(au.currentTime)});
+  au.addEventListener('ended',function(){if(idx<TRACKS.length-1){load(idx+1);au.play()}else{load(0)}});
+  seek.addEventListener('input',function(){seeking=true;setP(seek,seek.value/1000);cur.textContent=fmt(au.duration*seek.value/1000)});
+  seek.addEventListener('change',function(){if(au.duration)au.currentTime=au.duration*seek.value/1000;seeking=false});
+  // Equalizer-Animation (rein optisch)
+  var ph=0;
+  function animate(){cancelAnimationFrame(raf);
+    (function tick(){ if(au.paused){Array.prototype.forEach.call(barEls,function(b){b.style.height='20%'});return}
+      ph+=0.09;
+      for(var i=0;i<barEls.length;i++){var x=i/barEls.length;
+        var h=28+32*Math.abs(Math.sin(ph*1.3+i*0.55))*Math.abs(Math.cos(ph*0.7+x*6))+ 30*Math.random()*0.6;
+        barEls[i].style.height=Math.min(100,h)+'%'}
+      raf=setTimeout(function(){requestAnimationFrame(tick)},70);
+    })();
   }
   document.getElementById('copyPress').addEventListener('click',function(){copy(document.getElementById('presstext').textContent.trim(),'Pressetext')});
   document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){copy(b.getAttribute('data-copy'),b.getAttribute('data-copy'))})});

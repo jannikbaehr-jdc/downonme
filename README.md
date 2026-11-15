@@ -4,3 +4,7 @@ Melodic Hardcore Metal aus der Ortenau. Statische Seite ohne Build-Schritt, geho
 
 ## Social-Media-Links eintragen
 In `index.html` nach `Social Media` suchen und die Links bei `href=""` eintragen. Leere Links werden automatisch ausgeblendet.
+
+## Songs hinzufügen
+MP3 in den Ordner `audio/` legen und in `index.html` bei `TRACKS` eine Zeile ergänzen:
+`{title:"Songname", src:"audio/Dateiname.mp3"},`
