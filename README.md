@@ -1,5 +1,6 @@
-# DOWN ON ME – Promo & Press Kit
+# DOWN ON ME – Website / Press Kit
 
-Promo page for DOWN ON ME (melodischer Hardcore Metal aus der Ortenau): band photo, press text, tech overview, downloads (Technical Rider DE/EN, Pressetext PDF/Word, Pressefoto) and contact.
+Melodic Hardcore Metal aus der Ortenau. Statische Seite ohne Build-Schritt, gehostet über GitHub Pages (Branch `main`, Ordner `/ (root)`).
 
-Static site, no build step. Hosting: GitHub Pages → Settings → Pages → Branch `main`, folder `/ (root)`.
+## Social-Media-Links eintragen
+In `index.html` nach `Social Media` suchen und die Links bei `href=""` eintragen. Leere Links werden automatisch ausgeblendet.

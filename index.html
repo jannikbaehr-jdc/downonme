@@ -3,8 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DOWN ON ME – Promo & Press Kit</title>
-<meta name="description" content="DOWN ON ME – Melodischer Hardcore Metal aus der Ortenau. Pressetext, Technical Rider und Pressefoto zum Download.">
+<title>DOWN ON ME – Melodic Hardcore Metal</title>
+<meta name="description" content="DOWN ON ME – Melodic Hardcore Metal aus der Ortenau. Musik, Pressetext, Pressefoto, Logos und Technical Rider zum Download.">
+<meta property="og:title" content="DOWN ON ME – Melodic Hardcore Metal">
+<meta property="og:description" content="Promo & Press Kit: Musik, Pressetext, Fotos, Logos und Technical Rider.">
+<meta property="og:image" content="img/band-1200.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/webp" href="img/logo-900.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -146,6 +151,29 @@ footer .orn{margin-bottom:18px}
   .hero-inner{margin-top:-14vw;padding-bottom:36px}
 }
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* music */
+.music-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(24px,4vw,48px);align-items:center}
+@media(max-width:860px){.music-grid{grid-template-columns:1fr}}
+.player{border:1px solid var(--line);padding:6px;background:#0a0807}
+.player iframe{display:block;width:100%;height:352px;border:0;border-radius:12px}
+.release .k{font-family:var(--serif);color:var(--copper);letter-spacing:.2em;font-size:.72rem;text-transform:uppercase}
+.release .t{font-family:var(--serif);font-size:1.9rem;letter-spacing:.08em;line-height:1.2;margin:4px 0 2px}
+.release .a{color:var(--muted);margin-bottom:22px}
+/* socials */
+.socials{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.socials a[href=""]{display:none}
+.socials .btn{padding:11px 20px;font-size:.74rem}
+/* logos */
+.logo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
+.logo-card{border:1px solid var(--line);background:rgba(10,8,7,.7);text-decoration:none;color:var(--text);transition:transform .2s,border-color .2s;display:flex;flex-direction:column}
+.logo-card:hover{transform:translateY(-3px);border-color:var(--copper-hi)}
+.logo-card img{aspect-ratio:1408/667;object-fit:contain;width:100%}
+.logo-card .cap{padding:12px 14px;display:flex;flex-direction:column;gap:2px;font-size:.86rem}
+.logo-card .cap b{font-family:var(--serif);letter-spacing:.08em;font-weight:600}
+.logo-card .cap span{color:var(--copper-hi);font-family:var(--serif);font-size:.7rem;letter-spacing:.16em;white-space:nowrap}
+.sub{margin-top:44px}
+.center{text-align:center;margin-top:22px}
 </style>
 </head>
 <body>
@@ -154,9 +182,10 @@ footer .orn{margin-bottom:18px}
   <a class="brand" href="#top" aria-label="DOWN ON ME"><img src="img/logo-900.webp" alt="DOWN ON ME"></a>
   <ul>
     <li><a href="#band">Band</a></li>
+    <li class="k"><a href="#musik">Musik</a></li>
+    <li class="k"><a href="#presse">Press Kit</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
     <li><a href="#technik">Technik</a></li>
-    <li class="k"><a href="#downloads">Downloads</a></li>
-    <li class="k"><a href="#kontakt">Kontakt</a></li>
   </ul>
 </nav>
 
@@ -168,11 +197,11 @@ footer .orn{margin-bottom:18px}
   <div class="hero-inner">
     <h1>DOWN ON ME</h1>
     <img class="hero-logo" src="img/logo.webp" alt="DOWN ON ME Logo">
-    <div class="tag">Melodischer Hardcore Metal</div>
+    <div class="tag">Melodic Hardcore Metal</div>
     <div class="tag" style="margin-top:6px;letter-spacing:.3em;font-size:.72rem">aus der Ortenau</div>
     <div class="cta">
-      <a class="btn solid" href="#downloads">Press Kit &amp; Rider</a>
-      <a class="btn" href="#kontakt">Booking-Kontakt</a>
+      <a class="btn solid" href="#musik">Reinhören</a>
+      <a class="btn" href="#presse">Press Kit</a>
     </div>
   </div>
 </header>
@@ -181,7 +210,7 @@ footer .orn{margin-bottom:18px}
 <section class="page reveal" id="band">
   <div class="sec-head">
     <h2>Die Band</h2>
-    <p>Fünf Ortenauer · melodischer Hardcore Metal</p>
+    <p>Fünf Ortenauer · Melodic Hardcore Metal</p>
     <div class="orn"><i></i></div>
   </div>
   <div class="band-grid">
@@ -190,7 +219,7 @@ footer .orn{margin-bottom:18px}
       <p id="presstext">Wir, DOWN ON ME, sind fünf Ortenauer, die harten und gleichermaßen melodischen Metal anbieten. Mehrere Elemente aus den „Core“-Genres ergänzen unseren typischen Sound. In unseren Songs finden sich verschiedene Einflüsse aus den härteren Musikrichtungen der letzten 30 Jahre: Metal, Hardcore, Punk, uvm. Mit druckvollen Riffs, treibenden Grooves, eingängigen Melodien und ehrlichen Vocals verbinden wir rohe Energie mit modernen Sounds. Unsere Musik steht für Leidenschaft, Authentizität und kompromisslose Live-Power, bei der Kopfschüttler und Moshpitjunkies gleichermaßen auf ihre Kosten kommen.</p>
       <div class="actions">
         <button class="btn" id="copyPress" type="button">Text kopieren</button>
-        <a class="btn dl-link" href="files/DOWN_ON_ME_Pressetext.docx" download data-name="DOWN_ON_ME_Pressetext.docx">Pressetext (Word)</a>
+        <a class="btn" href="files/DOWN_ON_ME_Pressetext.docx" download>Pressetext (Word)</a>
       </div>
     </div>
     <div>
@@ -202,26 +231,109 @@ footer .orn{margin-bottom:18px}
         <li><b>BJÖRN</b><span>Bass</span></li>
         <li><b>JANNIK</b><span>Drums</span></li>
       </ul>
-      <div class="facts">
-        <div><strong>5</strong><small>Musiker</small></div>
-        <div><strong>16</strong><small>Kanäle</small></div>
-        <div><strong>IEM</strong><small>eigenes X32</small></div>
-      </div>
     </div>
+  </div>
+</section>
+
+<section class="page reveal" id="musik">
+  <div class="sec-head">
+    <h2>Musik</h2>
+    <p>Reinhören · Streamen · Folgen</p>
+    <div class="orn"><i></i></div>
+  </div>
+  <div class="music-grid">
+    <div class="player">
+      <iframe title="DOWN ON ME – Down on Me (Spotify)" src="https://open.spotify.com/embed/track/60kLOskpT6v0lR1I3k3zEE?utm_source=generator&amp;theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    <div class="release">
+      <div class="k">Aus dem Album</div>
+      <div class="t">False Gods</div>
+      <div class="a">Anspieltipp: „Down on Me“</div>
+      <a class="btn solid" href="https://open.spotify.com/artist/5Cb3vcFo1A3RR3G1tXI3fH" target="_blank" rel="noopener">Auf Spotify folgen</a>
+    </div>
+  </div>
+</section>
+
+<section class="page reveal" id="presse">
+  <div class="sec-head">
+    <h2>Press Kit</h2>
+    <p>Pressetext · Pressefoto · Logos</p>
+    <div class="orn"><i></i></div>
+  </div>
+  <div class="dl-grid">
+    <a class="dl" href="files/DOWN_ON_ME_Pressetext.pdf" download>
+      <div class="hd"><span>Presse</span><span>PDF</span></div>
+      <div class="bd"><div class="t">Pressetext<br>Gestaltet</div>
+        <div class="d">Bandbeschreibung im Layout – zum Weiterleiten oder Ausdrucken. 0,4 MB</div>
+        <div class="go">Herunterladen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></div></div>
+    </a>
+    <a class="dl" href="files/DOWN_ON_ME_Pressetext.docx" download>
+      <div class="hd"><span>Presse</span><span>Word · Clean</span></div>
+      <div class="bd"><div class="t">Pressetext<br>Clean</div>
+        <div class="d">Reiner Text ohne Layout – ideal für Programmhefte, Websites &amp; Social Media.</div>
+        <div class="go">Herunterladen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></div></div>
+    </a>
+    <a class="dl" href="files/DOWN_ON_ME_Pressefoto.jpg" download>
+      <div class="hd"><span>Foto</span><span>JPG</span></div>
+      <div class="bd"><div class="t">Pressefoto<br>Hochauflösend</div>
+        <div class="d">Bandfoto in voller Auflösung (7186 × 5389 px) für Plakate &amp; Ankündigungen. 2,7 MB</div>
+        <div class="go">Herunterladen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></div></div>
+    </a>
+  </div>
+
+  <div class="sub">
+    <h3>Logos</h3>
+    <div class="logo-grid">
+      <a class="logo-card" href="files/logos/DOWN_ON_ME_Logo_Rost_transparent.png" download>
+        <img src="img/prev_Rost_transparent.jpg" alt="Logo Rost" loading="lazy">
+        <div class="cap"><b>Original Rost</b><span>PNG · transparent</span></div></a>
+      <a class="logo-card" href="files/logos/DOWN_ON_ME_Logo_Rost_auf_Schwarz.jpg" download>
+        <img src="img/prev_Rost_transparent.jpg" alt="Logo Rost auf Schwarz" loading="lazy" style="background:#000">
+        <div class="cap"><b>Rost auf Schwarz</b><span>JPG</span></div></a>
+      <a class="logo-card" href="files/logos/DOWN_ON_ME_Logo_Weiss_transparent.png" download>
+        <img src="img/prev_Weiss_transparent.jpg" alt="Logo Weiß" loading="lazy">
+        <div class="cap"><b>Weiß</b><span>PNG · transparent</span></div></a>
+      <a class="logo-card" href="files/logos/DOWN_ON_ME_Logo_Schwarz_transparent.png" download>
+        <img src="img/prev_Schwarz_transparent.jpg" alt="Logo Schwarz" loading="lazy">
+        <div class="cap"><b>Schwarz</b><span>PNG · transparent</span></div></a>
+    </div>
+    <div class="center"><a class="btn" href="files/DOWN_ON_ME_Logos.zip" download>Alle Logos als ZIP</a></div>
+  </div>
+</section>
+
+<section class="page reveal contact" id="kontakt">
+  <div class="sec-head">
+    <h2>Kontakt</h2>
+    <p>Booking · Presse · Rückfragen</p>
+    <div class="orn"><i></i></div>
+  </div>
+  <div class="who">MATT</div>
+  <div class="role">Gitarre / Gesang / Technischer Ansprechpartner</div>
+  <div class="lines">
+    <div class="line"><small>Telefon</small><a href="tel:+4917654134149">+49 176 54134149</a><br><button type="button" data-copy="+49 176 54134149">Kopieren</button></div>
+    <div class="line"><small>E-Mail</small><a href="mailto:downonme@gmx.net">downonme@gmx.net</a><br><button type="button" data-copy="downonme@gmx.net">Kopieren</button></div>
+  </div>
+  <!-- Social Media: Link zwischen die Anführungszeichen bei href="" eintragen. Leere Links werden automatisch ausgeblendet. -->
+  <div class="socials">
+    <a class="btn" href="https://open.spotify.com/artist/5Cb3vcFo1A3RR3G1tXI3fH" target="_blank" rel="noopener">Spotify</a>
+    <a class="btn" href="" target="_blank" rel="noopener">Instagram</a>
+    <a class="btn" href="" target="_blank" rel="noopener">Facebook</a>
+    <a class="btn" href="" target="_blank" rel="noopener">YouTube</a>
+    <a class="btn" href="" target="_blank" rel="noopener">TikTok</a>
   </div>
 </section>
 
 <section class="page reveal" id="technik">
   <div class="sec-head">
-    <h2>Technik auf einen Blick</h2>
-    <p>Signalverteilung · Monitoring · Playback</p>
+    <h2>Technik</h2>
+    <p>Für Veranstalter &amp; Techniker · Technical Rider 2026</p>
     <div class="orn"><i></i></div>
   </div>
   <div class="tech-grid">
     <div>
       <h3>Allgemeines</h3>
       <ul class="bul">
-        <li>5 Musiker – melodischer Hardcore Metal, kein eigener FOH-Techniker</li>
+        <li>5 Musiker, kein eigener FOH-Techniker</li>
         <li>Veranstalter stellt PA und einen erfahrenen FOH-Techniker</li>
         <li>Eigenes Behringer X32 Rack für das komplette In-Ear-Monitoring – keine Wedges nötig</li>
       </ul>
@@ -245,66 +357,26 @@ footer .orn{margin-bottom:18px}
     </figure>
   </div>
   <div class="note"><b>Bitte frühzeitig kommunizieren:</b> Sollte etwas nicht gestellt werden können, finden wir gemeinsam eine Lösung.</div>
-</section>
-
-<section class="page reveal" id="downloads">
-  <div class="sec-head">
-    <h2>Downloads</h2>
-    <p>Technical Rider · Pressetext · Pressefoto</p>
-    <div class="orn"><i></i></div>
-  </div>
-  <div class="dl-grid">
-    <a class="dl dl-link" href="files/DOWN_ON_ME_Technical_Rider_2026_DE.pdf" download data-name="DOWN_ON_ME_Technical_Rider_2026_DE.pdf" target="_blank" rel="noopener">
+  <div class="dl-grid" style="margin-top:28px">
+    <a class="dl" href="files/DOWN_ON_ME_Technical_Rider_2026_DE.pdf" download>
       <div class="hd"><span>Technical Rider</span><span>DE · PDF</span></div>
       <div class="bd"><div class="t">Technical Rider 2026<br>Deutsch</div>
         <div class="d">Stageplot, Input-Liste, Drum-Rider, Checklisten, Backdrop – inkl. Druckversion. 6,8 MB</div>
         <div class="go">Herunterladen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></div></div>
     </a>
-    <a class="dl dl-link" href="files/DOWN_ON_ME_Technical_Rider_2026_EN.pdf" download data-name="DOWN_ON_ME_Technical_Rider_2026_EN.pdf" target="_blank" rel="noopener">
+    <a class="dl" href="files/DOWN_ON_ME_Technical_Rider_2026_EN.pdf" download>
       <div class="hd"><span>Technical Rider</span><span>EN · PDF</span></div>
       <div class="bd"><div class="t">Technical Rider 2026<br>English</div>
         <div class="d">Stage plot, input list, drum rider, checklists, backdrop – incl. print version. 16 MB</div>
         <div class="go">Download <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></div></div>
     </a>
-    <a class="dl dl-link" href="files/DOWN_ON_ME_Pressetext.pdf" download data-name="DOWN_ON_ME_Pressetext.pdf" target="_blank" rel="noopener">
-      <div class="hd"><span>Presse</span><span>PDF</span></div>
-      <div class="bd"><div class="t">Pressetext<br>Gestaltet</div>
-        <div class="d">Bandbeschreibung im Layout – zum Weiterleiten oder Ausdrucken. 0,4 MB</div>
-        <div class="go">Herunterladen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></div></div>
-    </a>
-    <a class="dl dl-link" href="files/DOWN_ON_ME_Pressetext.docx" download download data-name="DOWN_ON_ME_Pressetext.docx">
-      <div class="hd"><span>Presse</span><span>Word · Clean</span></div>
-      <div class="bd"><div class="t">Pressetext<br>Clean</div>
-        <div class="d">Reiner Text ohne Layout – ideal zum Kopieren für Programmhefte, Websites &amp; Social Media.</div>
-        <div class="go">Herunterladen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></div></div>
-    </a>
-    <a class="dl dl-link" href="files/DOWN_ON_ME_Pressefoto.jpg" download data-name="DOWN_ON_ME_Pressefoto.jpg" target="_blank" rel="noopener">
-      <div class="hd"><span>Presse</span><span>JPG</span></div>
-      <div class="bd"><div class="t">Pressefoto<br>Hochauflösend</div>
-        <div class="d">Bandfoto in voller Auflösung (7186 × 5389 px) für Plakate &amp; Ankündigungen. 2,7 MB</div>
-        <div class="go">Herunterladen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg></div></div>
-    </a>
-  </div>
-</section>
-
-<section class="page reveal contact" id="kontakt">
-  <div class="sec-head">
-    <h2>Kontakt</h2>
-    <p>Booking · Technik · Rückfragen</p>
-    <div class="orn"><i></i></div>
-  </div>
-  <div class="who">MATT</div>
-  <div class="role">Gitarre / Gesang / Technischer Ansprechpartner</div>
-  <div class="lines">
-    <div class="line"><small>Telefon</small><a href="tel:+4917654134149">+49 176 54134149</a><br><button type="button" data-copy="+49 176 54134149">Kopieren</button></div>
-    <div class="line"><small>E-Mail</small><a href="mailto:downonme@gmx.net">downonme@gmx.net</a><br><button type="button" data-copy="downonme@gmx.net">Kopieren</button></div>
   </div>
 </section>
 </main>
 
 <footer>
   <div class="orn"><i></i></div>
-  DOWN ON ME &nbsp;·&nbsp; Melodischer Hardcore Metal &nbsp;·&nbsp; 2026
+  DOWN ON ME &nbsp;·&nbsp; Melodic Hardcore Metal &nbsp;·&nbsp; 2026
 </footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -314,67 +386,18 @@ footer .orn{margin-bottom:18px}
   var nav=document.getElementById('nav');
   function onScroll(){nav.classList.toggle('solid',window.scrollY>60)}
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-
   var io='IntersectionObserver' in window ? new IntersectionObserver(function(es){
     es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
-  },{threshold:.08}) : null;
+  },{threshold:.05}) : null;
   document.querySelectorAll('.reveal').forEach(function(el){io?io.observe(el):el.classList.add('in')});
-
   var toastEl=document.getElementById('toast'),tt;
   function toast(m){toastEl.textContent=m;toastEl.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toastEl.classList.remove('show')},2600)}
-
   function copy(text,label){
-    try{
-      navigator.clipboard.writeText(text).then(function(){toast(label+' kopiert')},function(){toast('Kopieren nicht möglich – bitte markieren')});
-    }catch(e){toast('Kopieren nicht möglich – bitte markieren')}
+    try{navigator.clipboard.writeText(text).then(function(){toast(label+' kopiert')},function(){toast('Kopieren nicht möglich – bitte markieren')})}
+    catch(e){toast('Kopieren nicht möglich – bitte markieren')}
   }
-  document.getElementById('copyPress').addEventListener('click',function(){
-    copy(document.getElementById('presstext').textContent.trim(),'Pressetext');
-  });
-  document.querySelectorAll('[data-copy]').forEach(function(b){
-    b.addEventListener('click',function(){copy(b.getAttribute('data-copy'),b.getAttribute('data-copy'))});
-  });
-
-  // Downloads: use the host's download capability when available, otherwise open the file directly.
-  var dl=null;
-  try{
-    if(window.claude && typeof window.claude.use==='function'){
-      window.claude.use('downloads').then(function(ns){dl=ns||null},function(){dl=null});
-    }
-  }catch(e){}
-
-  var DOCX_B64='';
-  function embeddedBlob(){
-    var bin=atob(DOCX_B64),u=new Uint8Array(bin.length);
-    for(var i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);
-    return new Blob([u],{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'});
-  }
-  document.querySelectorAll('.dl-link').forEach(function(a){
-    var emb=a.hasAttribute('data-embedded');
-    a.addEventListener('click',function(ev){
-      if(!dl){
-        if(emb){ev.preventDefault();toast('Download hier nicht verfügbar – bitte \u201eText kopieren\u201c nutzen');}
-        return; // fallback: normal link opens the file
-      }
-      ev.preventDefault();
-      var name=a.getAttribute('data-name');
-      a.classList.add('busy');
-      (emb ? Promise.resolve(embeddedBlob()) : fetch(a.getAttribute('href')).then(function(r){
-        if(!r.ok) throw new Error('fetch');
-        return r.blob();
-      })).then(function(blob){
-        return dl.save({filename:name,data:blob});
-      }).then(function(){
-        toast(name+' wird gespeichert');
-      }).catch(function(err){
-        var c=err&&err.code;
-        if(c==='declined') return;
-        if(c==='rate_limited'){toast('Bitte kurz warten und erneut versuchen');return}
-        if(emb){toast('Download nicht möglich – bitte \u201eText kopieren\u201c nutzen');return}
-        window.location.href=a.getAttribute('href');
-      }).then(function(){a.classList.remove('busy')});
-    });
-  });
+  document.getElementById('copyPress').addEventListener('click',function(){copy(document.getElementById('presstext').textContent.trim(),'Pressetext')});
+  document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){copy(b.getAttribute('data-copy'),b.getAttribute('data-copy'))})});
 })();
 </script>
 </body>
